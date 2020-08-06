@@ -8,8 +8,16 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'movies',
     pathMatch: 'full'
+  },
+  {
+    path: 'movies',
+    loadChildren: () => import('./pages/movies/movies.module').then( m => m.MoviesPageModule)
+  },
+  {
+    path: 'movies/:id',
+    loadChildren: () => import('./pages/movie-details/movie-details.module').then( m => m.MovieDetailsPageModule)
   },
 ];
 
