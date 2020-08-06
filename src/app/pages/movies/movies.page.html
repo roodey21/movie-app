@@ -10,7 +10,7 @@
 
   <ion-item>
     <ion-label>Select SearchType</ion-label>
-    <ion-select [(ngModel)]="thpe" (ionChange)="searchChanged($event)">
+    <ion-select [(ngModel)]="type" (ionChange)="searchChanged($event)">
       <ion-select-option value="">All</ion-select-option>
       <ion-select-option value="movie">Movie</ion-select-option>
       <ion-select-option value="series">Series</ion-select-option>
@@ -19,8 +19,8 @@
   </ion-item>
 
   <ion-list>
-    <ion-item button *ngFor="let item of (results | async)" [routeLink]="['/', 'movies', item.imdbID]">
-      <ion-avatar slot="star">
+    <ion-item button *ngFor="let item of (results | async)" [routerLink]="['/', 'movies', item.imdbID]">
+      <ion-avatar slot="start">
         <img [src]="item.Poster" PngIf="item.Poster != 'N/A'">
       </ion-avatar>
 
