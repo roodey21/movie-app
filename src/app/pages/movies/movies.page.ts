@@ -18,7 +18,7 @@ export class MoviesPage implements OnInit {
   ngOnInit() {
   }
 
-  searchChanged() {
+  searchChanged($event) {
     this.results = this.movieService.searchData(this.searchTerm, this.type);
   }
 }
